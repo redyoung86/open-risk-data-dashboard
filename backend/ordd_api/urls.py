@@ -2,6 +2,7 @@
 
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
+from rest_framework.documentation import include_docs_urls
 
 from rest_framework.authtoken.views import obtain_auth_token
 from .views import (
@@ -74,6 +75,7 @@ urlpatterns = [
         name="key_dataset0on4"),
 
     url(r'^get-token/', obtain_auth_token),
+    url(r'^docs/', include_docs_urls(title='ODRI documentation'))
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

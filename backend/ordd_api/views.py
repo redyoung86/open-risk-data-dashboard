@@ -105,10 +105,12 @@ class ProfilePasswordReset(GenericAPIView):
     """
 
     def get_serializer_class(self):
-        if self.request.method == "PUT":
-            return ResetPasswordSerializer
-        else:
-            return ResetPasswordReqSerializer
+        try:
+            if self.request.method == "PUT":
+                return ResetPasswordSerializer
+        except:
+            pass
+        return ResetPasswordReqSerializer
 
     def post(self, request):
         instance = ResetPasswordReqSerializer(data=request.data)
@@ -345,10 +347,12 @@ class ProfileDatasetListCreateView(generics.ListCreateAPIView):
     permission_classes = (IsOwner, )
 
     def get_serializer_class(self):
-        if self.request.method == "GET":
-            return ProfileDatasetListSerializer
-        elif self.request.method == "POST":
-            return ProfileDatasetCreateSerializer
+        try:
+            if self.request.method == "POST":
+                return ProfileDatasetCreateSerializer
+        except:
+            pass
+        return ProfileDatasetListSerializer
 
     def get_queryset(self):
         return Dataset.objects.filter(
