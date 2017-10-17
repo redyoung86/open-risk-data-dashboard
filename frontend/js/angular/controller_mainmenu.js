@@ -36,16 +36,17 @@ RodiApp.controller('RodiCtrlMainMenu', ['$scope', 'RodiSrv', '$filter', '$window
 
     $scope.downloadCSV = function()
     {
+
         // Download del file CSV con tutti i datasets
         RodiSrv.getCSVFile ($scope.tokenid,
             function(data)
             {
                 //OK
                 var hiddenElement = document.createElement('a');
-
                 hiddenElement.href = 'data:attachment/csv,' + encodeURI(data);
                 hiddenElement.target = '_blank';
                 hiddenElement.download = 'open_data_for_resilience_index.csv';
+                document.body.appendChild(hiddenElement);
                 hiddenElement.click();
 
             }, function(data)
