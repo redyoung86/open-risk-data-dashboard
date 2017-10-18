@@ -571,10 +571,18 @@ RodiApp.controller('RodiCtrlDataset', ['$scope', 'RodiSrv', '$window', '$filter'
                                 RodiSrv.getDescription(0, $scope.dataCategoryId, $scope.datasetCategoryId,
                                     function(data)
                                     {
+                                        // To restore in official portal
                                         $scope.datasetDescription = data;
 
+                                        // Take only National Descriptions - delete in official portal
+                                        // $scope.datasetDescription = $filter('filter')(data, function(item){
+                                        //     return item.level == "National";
+                                        // });
+
+                                        console.log($scope.datasetDescription);
+
                                         //Get description ID
-                                        var aDesc = $filter('filter')(data,
+                                        var aDesc = $filter('filter')($scope.datasetDescription,
                                             function(e)
                                             {
                                                 return e.description.name == $scope.objDataset.keydataset.description;

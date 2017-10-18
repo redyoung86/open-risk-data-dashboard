@@ -857,8 +857,6 @@ RodiApp.controller('RodiCtrl', ['$scope', 'RodiSrv', '$window', '$filter', '$coo
                 $scope.datasetCategory = data;
                 $scope.datasetCategoryAll = angular.copy(data);
 
-                console.log(data);
-
                 // Check dataset parameter
                 if($scope.datasetpar)
                 {
@@ -1153,21 +1151,17 @@ RodiApp.controller('RodiCtrl', ['$scope', 'RodiSrv', '$window', '$filter', '$coo
                     function(data)
                     {
                         // To restore in official portal
-                        // $scope.datasetDescription = data;
+                        $scope.datasetDescription = data;
 
                         // Take only National Descriptions - delete in official portal
-                        $scope.datasetDescription = $filter('filter')(data, function(item){
-                            return item.level == "National";
-                        });
-
-                        console.log($scope.datasetDescription);
+                        // $scope.datasetDescription = $filter('filter')(data, function(item){
+                        //     return item.level == "National";
+                        // });
 
                         //Set National description like default selection
                         var nationalDesc = $filter('filter')(data, function(item){
                             return item.level == "National";
                         });
-
-                        console.log(nationalDesc);
 
                         if (nationalDesc.length > 0){
                             // Find National description

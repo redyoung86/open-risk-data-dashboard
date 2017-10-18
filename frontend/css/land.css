@@ -183,7 +183,7 @@ body {
   padding-right: 0; }
 
 .fbg {
-  background-image: url("../img/michael-fertig-2429.jpg");
+  background-image: url("../img/bg_home.jpg");
   background-attachment: fixed;
   background-position: 50% top;
   background-size: cover;
@@ -252,9 +252,10 @@ section + section {
 .page_title {
   white-space: normal;
   line-height: 2;
-  font-size: 3.5em;
-  color: #33d3ff;
-  letter-spacing: 5px; }
+  font-size: 4em;
+  color: #ffffff;
+  letter-spacing: 5px;
+}
 
 .block {
   border: 1px solid #007899; }
