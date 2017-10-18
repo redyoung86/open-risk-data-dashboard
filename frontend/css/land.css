@@ -364,6 +364,9 @@ circle {
             flex-wrap: wrap; } }
       .grid_wrap .wrap_bottom #menu-hazard span {
         /*display: none;*/ }
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 15px;
+        white-space: pre-wrap; }
       .grid_wrap .wrap_bottom #menu-hazard .nav > li {
         flex-grow: 0; }
         .grid_wrap .wrap_bottom #menu-hazard .nav > li > a {
