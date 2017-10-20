@@ -203,7 +203,7 @@ RodiApp.service("RodiSrv", ['$http', '$filter', function($http, $filter)
     {
 
         if(filters.length> 0){
-            var string = '?level=national&applicability='
+            var string = '?applicability='
             filters.forEach(function (item) {
                 string = string+item;
             })
@@ -549,7 +549,7 @@ RodiApp.service("RodiSrv", ['$http', '$filter', function($http, $filter)
 
         var req = {
             method: 'GET',
-            url: baseAPIurl + 'dataset/?level=national',
+            url: baseAPIurl + 'dataset/',
             headers: {
                 // 'Authorization': 'Token ' + token
             },
@@ -585,7 +585,7 @@ RodiApp.service("RodiSrv", ['$http', '$filter', function($http, $filter)
 
         var req = {
             method: 'GET',
-            url: baseAPIurl + 'dataset/?level=national&country=' + idCountry + sCategoryFilter + sApplFilter,
+            url: baseAPIurl + 'dataset/?country=' + idCountry + sCategoryFilter + sApplFilter,
             headers: {
                 // 'Authorization': 'Token ' + token
             },
@@ -1130,7 +1130,7 @@ RodiApp.service("RodiSrv", ['$http', '$filter', function($http, $filter)
 
         var req = {
             method: 'GET',
-            url: baseAPIurl + 'profile/dataset/?level=national',
+            url: baseAPIurl + 'profile/dataset/',
             headers: {
                 'Authorization': 'Token ' + token
             },
@@ -1418,7 +1418,7 @@ RodiApp.service("RodiSrv", ['$http', '$filter', function($http, $filter)
 
         var req = {
             method: 'GET',
-            url: baseAPIurl + 'scoring/?level=national',
+            url: baseAPIurl + 'scoring/',
             // url: 'https://dev.riskopendata.org/api-dev2/scoring/',
             headers: {
                 // 'Authorization': 'Token ' + token
@@ -1457,7 +1457,7 @@ RodiApp.service("RodiSrv", ['$http', '$filter', function($http, $filter)
 
         var req = {
             method: 'GET',
-            url: baseAPIurl + 'scoring/' + idCountry + '?level=national&' + sCategoryFilter + sApplFilter,
+            url: baseAPIurl + 'scoring/' + idCountry + '?' + sCategoryFilter + sApplFilter,
             // url: 'https://dev.riskopendata.org/api-dev2/scoring/' + idCountry,
             headers: {
                 // 'Authorization': 'Token ' + token
